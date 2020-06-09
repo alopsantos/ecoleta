@@ -2,12 +2,12 @@ function populateUFs() {
   const ufSelect = document.querySelector('select[name=uf]')
   const url = "https://servicodados.ibge.gov.br/api/v1/localidades/estados"
   fetch(url)
-    .then((res) => {return res.json()})
+    .then((res) => { return res.json() })
     .then((states) => {
 
       for (const state of states) {
         ufSelect.innerHTML += `<option value="${state.id}">${state.nome}</option>`
-        
+
       }
 
     })
@@ -51,9 +51,31 @@ for (const item of itemsToCollect) {
   item.addEventListener("click", handleSelectedItem)
 }
 
+const collectedItems = document.querySelector("input[name=items]")
+let selectedItems = []
+
 function handleSelectedItem(event) {
   const itemLi = event.target
   itemLi.classList.toggle("selected")
 
   const itemId = itemLi.dataset.id
+
+  const alreadySelected = selectedItems.findIndex(item => {
+    const itemFound = item == itemId
+    return itemFound
+  })
+
+  if (alreadySelected >= 0) {
+    const filteredItems = selectedItems.filter(item => {
+      const itemIsDifferent = item != itemId
+      return itemIsDifferent
+    })
+
+    selectedItems = filteredItems
+
+  } else {
+    selectedItems.push(itemId)
+  }
+  //console.log(selectedItems)
+  collectedItems.value = selectedItems
 }

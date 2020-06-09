@@ -1,70 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles/main.css" />
-  <link rel="stylesheet" href="styles/search-results.css" />
-  <link rel="stylesheet" href="styles/responsive.css" />
+{% set pageId = "page-search-results" %}
+
+{% block styles %}
+  <link rel="stylesheet" href="styles/search-results.css"/>
+{% endblock styles %}
+
+{% block title %}
   <title>Resultado da pesquisa</title>
-</head>
+{% endblock title %}
 
-<body>
-  <div id="page-search-results">
+{% block content %}
 
-    <header>
-      <img src="assets/logo.svg" alt="Logomarca" />
-      <a href="/"> <span></span>Voltar para home</a>
-    </header>
+  {% include "partials/page-header.html" %}
 
-    <main>
-      <h3><Strong>2 Pontos</Strong> Encontrados</h3>
+  <main>
+    <h3>
+      <strong>2 Pontos</strong>
+      Encontrados</h3>
 
-      <div class="cards">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Coletoria">
-          <h1>Coletoria</h1>
-          <h3>Residuos Eletronicos, Lampadas</h3>
-          <p>
-            Rio do Sul, Santa Catarina<br/>
-            Guilherme Gemballa, Jardim America</br>
-            Nº 260 
-          </p>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1566933882642-186d156f1145?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Coletoria">
-          <h1>Paperside</h1>
-          <h3>Residuos Eletronicos, Lampadas</h3>
-          <p>
-            Rio do Sul, Santa Catarina<br/>
-            Guilherme Gemballa, Jardim America</br>
-            Nº 260 
-          </p>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Coletoria">
-          <h1>Organics</h1>
-          <h3>Residuos Eletronicos, Lampadas</h3>
-          <p>
-            Rio do Sul, Santa Catarina<br/>
-            Guilherme Gemballa, Jardim America</br>
-            Nº 260 
-          </p>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Coletoria">
-          <h1>Organics</h1>
-          <h3>Residuos Eletronicos, Lampadas</h3>
-          <p>
-            Rio do Sul, Santa Catarina<br/>
-            Guilherme Gemballa, Jardim America</br>
-            Nº 260 
-          </p>
-        </div>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Coletoria">
+        <h1>Coletoria</h1>
+        <h3>Residuos Eletronicos, Lampadas</h3>
+        <p>
+          Rio do Sul, Santa Catarina<br>
+            Guilherme Gemballa, Jardim America<br />
+          Nº 260
+        </p>
       </div>
-    </main>
-  </div>
-</body>
-
-</html>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1566933882642-186d156f1145?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Coletoria">
+        <h1>Paperside</h1>
+        <h3>Residuos Eletronicos, Lampadas</h3>
+        <p>
+          Rio do Sul, Santa Catarina<br>
+            Guilherme Gemballa, Jardim America<br />
+          Nº 260
+        </p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Coletoria">
+        <h1>Organics</h1>
+        <h3>Residuos Eletronicos, Lampadas</h3>
+        <p>
+          Rio do Sul, Santa Catarina<br>
+            Guilherme Gemballa, Jardim America<br />
+          Nº 260
+        </p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Coletoria">
+        <h1>Organics</h1>
+        <h3>Residuos Eletronicos, Lampadas</h3>
+        <p>
+          Rio do Sul, Santa Catarina<br>
+            Guilherme Gemballa, Jardim America<br />
+          Nº 260
+        </p>
+      </div>
+    </div>
+  </main>
+{% endblock content %}

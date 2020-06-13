@@ -26,7 +26,7 @@ server.get("/create-point", (req, res) =>{
 
 server.post("/save-point", (req, res)=>{
   const query = `
-  INSERT INT places (
+  INSERT INTO places (
     image,
     name,
     address,
@@ -48,7 +48,8 @@ server.post("/save-point", (req, res)=>{
 
   function afterInsertData(err){
     if(err){
-      return res.render("create-point.html", { saved: false })
+      console.log(err + "Erro aqui")
+      return res.render("create-point.html", { cancelado: true })
     }
     // console.log("Cadastrado com sucesso")
     // console.log(this)    
@@ -79,4 +80,4 @@ server.get("/search", (req, res) =>{
   })  
 })
 
-server.listen(3000)
+server.listen(3333)

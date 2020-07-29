@@ -1,12 +1,12 @@
 function populateUFs() {
   const ufSelect = document.querySelector('select[name=uf]')
-  const url = "https://servicodados.ibge.gov.br/api/v1/localidades/estados"
+  const url = "http://localhost:3000/farmacias"
   fetch(url)
     .then((res) => { return res.json() })
     .then((states) => {
 
       for (const state of states) {
-        ufSelect.innerHTML += `<option value="${state.id}">${state.nome}</option>`
+        ufSelect.innerHTML += `<option value="${state._id}">${state.name}</option>`
 
       }
 
